@@ -49,10 +49,7 @@ private:
     Span* head_;
     std::mutex mtx_;
 public:
-    SpanList() {
-        head_ = new Span();
-        head_->nxt_ = head_;
-    }
+    SpanList(): head_(nullptr) {}
     ~SpanList() {
         Span* cur = head_;
         while(cur != head_->nxt_)
@@ -69,7 +66,7 @@ public:
 
     void AddSpan()
     {
-        Span* obj = new Span();
+        Span* obj = new (malloc(sizeof(Span))) Span();
         std::unique_lock<std::mutex> lock(mtx_);
         
         obj->nxt_ = head_;
@@ -89,8 +86,7 @@ public:
     bool Empty()
     {
         std::unique_lock<std::mutex> lock(mtx_);
-
-        return head_ == head_->nxt_;
+        return head_ == nullptr;
     }
 };
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/swm_231/library/liballo.a"
-  "/home/swm_231/library/liballo.pdb"
+  "/home/swm_231/library/lib/liballo.a"
+  "/home/swm_231/library/lib/liballo.pdb"
   "CMakeFiles/allo.dir/src/MemoryCache.cpp.o"
 )
 

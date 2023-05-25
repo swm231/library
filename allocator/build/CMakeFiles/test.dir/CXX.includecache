@@ -22,7 +22,7 @@ algorithm
 Common.h
 ../include/Common.h
 
-../include/ThreadCache.h
+../include/MemoryCache.h
 Common.h
 ../include/Common.h
 FreeList.h
@@ -30,29 +30,13 @@ FreeList.h
 memory
 -
 
-/home/swm_231/allocator/src/main.cpp
+/home/swm_231/library/allocator/src/MemoryCache.cpp
+MemoryCache.h
+/home/swm_231/library/allocator/src/MemoryCache.h
+
+/home/swm_231/library/allocator/src/main.cpp
+MemoryCache.h
+/home/swm_231/library/allocator/src/MemoryCache.h
 iostream
 -
-memory
--
-functional
--
-malloc.h
--
-mutex
--
-limits
--
-list
--
-vector
--
-bits/stdc++.h
--
-thread
--
-map
--
-ThreadCache.h
-/home/swm_231/allocator/src/ThreadCache.h
 

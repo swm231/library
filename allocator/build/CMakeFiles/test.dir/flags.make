@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/swm_231/allocator/include 
+CXX_INCLUDES = -I/home/swm_231/library/allocator/include 
 

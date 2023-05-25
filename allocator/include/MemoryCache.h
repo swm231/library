@@ -6,7 +6,7 @@
 #include <memory>
 
 class FreeList;
-class MP{
+class MemoryCache{
 private:
     // 8, 16, 32, 64, 128, 256, 512, 1k, 4k, 8k
     FreeList* freelist_[NLISTS];
@@ -14,15 +14,8 @@ public:
     void* Allocate(size_t);
     void Deallocate(void*, size_t);
 
-    MP();
-    ~MP();
-
-    void* operator new(size_t size){
-
-    }
-    void  operator delete(void* ptr){
-
-    }
+    MemoryCache();
+    ~MemoryCache();
 };
 
 #endif

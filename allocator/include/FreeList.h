@@ -10,8 +10,9 @@ private:
 public:
     static void* CentralAllocate(size_t size){
         if(spanlist_->Empty())
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i){
                 spanlist_->AddSpan();
+            }
 
         Span* obj = spanlist_->GetSpan();
 
@@ -28,13 +29,12 @@ public:
 
 class FreeList{
 private:
-    void* head_;
+    std::atomic_flag flag_ = ATOMIC_FLAG_INIT;
     size_t size_, max_size_;
-    std::atomic_flag flag_;
+    void* head_;
 public:
     FreeList(int _size) : 
-        head_(nullptr), size_(0), max_size_(1 << (_size + 3)) {}
-    
+        head_(nullptr), size_(0), max_size_(1 << (_size + 3)){}
     ~FreeList() {
         // TODO
     }
@@ -95,7 +95,6 @@ public:
     void lock(){
         while(flag_.test_and_set());
     }
-
     void unlock(){
         flag_.clear();
     }

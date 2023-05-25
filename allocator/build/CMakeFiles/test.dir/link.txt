@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/test.dir/src/MemoryCache.cpp.o CMakeFiles/test.dir/src/main.cpp.o  -o ../bin/test 

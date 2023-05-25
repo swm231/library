@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/swm_231/cmake/a/libcalc.a  CMakeFiles/calc.dir/src/CentralCache.cpp.o CMakeFiles/calc.dir/src/ThreadCache.cpp.o
-/usr/bin/ranlib /home/swm_231/cmake/a/libcalc.a

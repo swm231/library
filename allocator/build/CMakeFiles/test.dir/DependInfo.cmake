@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/swm_231/allocator/src/ThreadCache.cpp" "/home/swm_231/allocator/build/CMakeFiles/main.dir/src/ThreadCache.cpp.o"
-  "/home/swm_231/allocator/src/main.cpp" "/home/swm_231/allocator/build/CMakeFiles/main.dir/src/main.cpp.o"
+  "/home/swm_231/library/allocator/src/MemoryCache.cpp" "/home/swm_231/library/allocator/build/CMakeFiles/test.dir/src/MemoryCache.cpp.o"
+  "/home/swm_231/library/allocator/src/main.cpp" "/home/swm_231/library/allocator/build/CMakeFiles/test.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
