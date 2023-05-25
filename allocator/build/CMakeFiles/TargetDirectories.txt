@@ -1,0 +1,3 @@
+/home/swm_231/allocator/build/CMakeFiles/rebuild_cache.dir
+/home/swm_231/allocator/build/CMakeFiles/edit_cache.dir
+/home/swm_231/allocator/build/CMakeFiles/allo.dir

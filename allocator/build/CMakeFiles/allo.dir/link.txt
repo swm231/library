@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/swm_231/library/liballo.a  CMakeFiles/allo.dir/src/MemoryCache.cpp.o
+/usr/bin/ranlib /home/swm_231/library/liballo.a
