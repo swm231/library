@@ -1,19 +1,24 @@
 #include "MemoryCache.h"
 
 MemoryCache::MemoryCache(){
-    for(int i = 0; i < 10; ++i){
+    for(int i = 0; i < 10; ++i)
         freelist_[i] = new (malloc(sizeof(FreeList))) FreeList(i);
-    }
 }
 MemoryCache::~MemoryCache(){
-    // TODO
+    for(int i = 0; i < 10; ++i)
+        freelist_[i]->~FreeList();
 }
 void* MemoryCache::Allocate(size_t size){
+    size += 2;
     size_t index = Size::Index(size);
-    return freelist_[index]->Get();
+    short* ptr = (short*)freelist_[index]->Get();
+    *ptr = (short)Size::Roundup(size);
+    ptr = (short*)((uint64_t)ptr + 2);
+    return ptr;
 }
-void MemoryCache::Deallocate(void* ptr, size_t size){
-    size_t index = Size::Index(size);
+void MemoryCache::Deallocate(void* ptr){
+    ptr = (void*)((uint64_t)ptr - 2);
+    size_t index = Size::Index(*(short*)ptr);
     freelist_[index]->Push(ptr);
 }
 
@@ -27,13 +32,13 @@ MemoryCache& MC(){
 void* operator new(size_t size){
     return MC().Allocate(size);
 }
-void operator delete(void* ptr, size_t size){
-    // TODO
+void operator delete(void* ptr){
+    MC().Deallocate(ptr);
 }
 
 void* operator new[](size_t size){
     return MC().Allocate(size);
 }
 void operator delete[](void* ptr){
-    // TODO
+    MC().Deallocate(ptr);
 }
