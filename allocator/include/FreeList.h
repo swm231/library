@@ -45,7 +45,7 @@ public:
         NxtObj(obj) = head_;
         head_ = obj;
         ++ size_;
-        printf("%ld字节回收完毕,还剩%ld块,roundup:%ld\n", max_size_, size_, Size::Roundup(size_));
+        // printf("%ld字节回收完毕,还剩%ld块,roundup:%ld\n", max_size_, size_, Size::Roundup(size_));
         unlock();
     }
 
@@ -67,7 +67,7 @@ public:
         void* obj = head_;
         head_ = NxtObj(obj);
         -- size_;
-        printf("%ld字节分配完毕,还剩%ld块,roundup:%ld\n", max_size_, size_, Size::Roundup(size_));
+        // printf("%ld字节分配完毕,还剩%ld块,roundup:%ld\n", max_size_, size_, Size::Roundup(size_));
         unlock();
         return obj;
     }

@@ -171,11 +171,11 @@ public:
         delete _impl;
     }
 
-    // const iterator* crbegin(){ return ; }
-    // const iterator* crend(){ return static_cast<const iterator*>(_end); }
+    const iterator* crbegin(){ return iterator(_impl->_node->_pre); }
+    const iterator* crend(){ return iterator(_impl->_node); }
 
-    // iterator* rbegin(){ return static_cast<iterator*>(_begin); }
-    // const iterator* rend(){ return static_cast<iterator*>(_end); }
+    iterator* rbegin(){ return iterator(_impl->_node->_pre); }
+    const iterator* rend(){ return iterator(_impl->_node); }
 
     const iterator cbegin(){ return iterator(_impl->_node->_nxt); }
     const iterator cend(){ return iterator(_impl->_node); }
